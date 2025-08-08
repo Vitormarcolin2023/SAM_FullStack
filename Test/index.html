@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - SAM</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-box">
+        <div class="logo-container">
+          <i class="fas fa-user-shield"></i>
+        </div>
+        <h2><i class="fas fa-exclamation-circle"></i> Login - SAM</h2>
+        <form>
+          <div class="input-group">
+            <i class="fas fa-user-tie"></i>
+            <select id="user-type" name="user-type">
+              <option value="" disabled selected>tipo de usuário</option>
+              <option value="aluno">Aluno</option>
+              <option value="professor">Professor</option>
+              <option value="admin">Administrador</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="digite sua senha"
+              required
+            />
+          </div>
+          <button type="submit" class="btn-login">Acessar</button>
+          <button type="button" class="btn-register">
+            Novo no SAM? Cadastre-se!
+          </button>
+        </form>
+      </div>
+      <div class="user-info">
+        <span>Josiane Cristina</span>
+      </div>
+      <div class="chat-icon">
+        <i class="fas fa-comment-dots"></i>
+      </div>
+    </div>
+  </body>
+</html>
