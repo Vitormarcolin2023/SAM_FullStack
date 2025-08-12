@@ -46,5 +46,4 @@ public class MentorEntity {
     private AreaDeAtuacao areaDeAtuacao;
 
     //private EnderecoEntity endereco; criar classe endereço
-
 }

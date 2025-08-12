@@ -1,5 +1,6 @@
 package com.br.SAM.SAM_FullStack.repository;
 
+import com.br.SAM.SAM_FullStack.model.AreaDeAtuacao;
 import com.br.SAM.SAM_FullStack.model.MentorEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 

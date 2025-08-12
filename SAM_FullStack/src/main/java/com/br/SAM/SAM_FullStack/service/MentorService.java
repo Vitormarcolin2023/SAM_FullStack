@@ -24,13 +24,19 @@ public class MentorService {
                 .orElseThrow(()-> new RuntimeException("Mentor não encontrado"));
     }
 
-    public MentorEntity save(MentorEntity mentor){
-        // Regra de negócio: definir status baseado no telefone
-        if (mentor.getTelefone() == null || mentor.getTelefone().isBlank()) {
-            mentor.setTipoDeVinculo("INCOMPLETO");
-        } else {
-            mentor.setTipoDeVinculo("COMPLETO");
-        }
+    public MentorEntity save(MentorEntity mentor) {
+        // Regra de negócio: só pode finalizar o cadastro após aprovação da coordenação
+        // OBS: Lógica de aprovação será implementada quando a classe Coordenação estiver disponível.
+
+        mentor.setTipoDeVinculo("PENDENTE_APROVACAO"); // Status inicial até coordenação aprovar
+
+        // No futuro, aqui terá a verificação, por exemplo:
+        // if (coordenacaoService.aprovou(mentor)) {
+        //     mentor.setTipoDeVinculo("COMPLETO");
+        // } else {
+        //     mentor.setTipoDeVinculo("PENDENTE_APROVACAO");
+        // }
+
         return mentorRepository.save(mentor);
     }
 
