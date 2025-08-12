@@ -1,13 +1,18 @@
 package com.br.SAM.SAM_FullStack.model;
 
 import jakarta.persistence.*;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 @Data
 @Entity
 @Table(name = "tb_aluno")
-public class Aluno {
+@Getter
+@Setter
+@ToString
+public class AlunoModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
