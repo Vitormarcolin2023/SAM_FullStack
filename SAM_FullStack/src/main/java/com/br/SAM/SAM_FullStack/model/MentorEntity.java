@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "tb_mentor")
-public class Mentor {
+public class MentorEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,9 +32,9 @@ public class Mentor {
     @NotBlank(message = "O campo senha é obrigatório")
     private String senha;
 
-    /*@NotNull(message = "O tipo de usuário é obrigatório")
+    @NotNull(message = "O tipo de usuário é obrigatório")
     private TipoMentor tipoDeUsuario;
-     */
+
     @NotBlank(message = "O campo telefone é obrigatório")
     private String telefone;
 
@@ -42,10 +42,8 @@ public class Mentor {
 
     private String tipoDeVinculo;
 
-    /*
     @NotNull(message = "A área de atuação é obrigatória")
     private AreaDeAtuacao areaDeAtuacao;
-     */
 
     //private EnderecoEntity endereco; criar classe endereço
 
