@@ -29,6 +29,16 @@ public class AlunoController {
         }
     }
 
+    @GetMapping("/findById/{id}")
+    public ResponseEntity<Aluno> findById(@PathVariable Integer id) {
+        try {
+            var result = alunoService.findById(id);
+            return new ResponseEntity<>(result, HttpStatus.OK);
+        } catch (Exception ex) {
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+        }
+    }
+
     @PostMapping("/save")
     public ResponseEntity<Aluno> save(@RequestBody Aluno aluno) {
         try {
@@ -38,6 +48,27 @@ public class AlunoController {
             // Logar o erro
             ex.printStackTrace();
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR); // Status 500
+        }
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> delete(@PathVariable Integer id) {
+        try {
+            alunoService.delete(id);
+            return ResponseEntity.noContent().build(); // status 204
+        } catch (Exception ex) {
+            return ResponseEntity.badRequest().build(); // status 400
+        }
+    }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Aluno> update(@PathVariable Integer id,
+                                        @RequestBody Aluno alunoUpdate) {
+        try {
+            var result = alunoService.update(id, alunoUpdate);
+            return new ResponseEntity<>(result, HttpStatus.OK);
+        } catch (Exception ex) {
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
     }
 
