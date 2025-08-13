@@ -1,10 +1,10 @@
-package com.br.SAM.SAM_FullStack;
+package com.api.sam;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SamFullStackApplicationTests {
+class SamApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,13 +1,13 @@
-package com.br.SAM.SAM_FullStack;
+package com.api.sam;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SamFullStackApplication {
+public class SamApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SamFullStackApplication.class, args);
+		SpringApplication.run(SamApplication.class, args);
 	}
 
 }
