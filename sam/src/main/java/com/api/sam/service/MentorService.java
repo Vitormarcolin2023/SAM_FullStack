@@ -17,7 +17,7 @@ public class MentorService {
         return mentorRepository.findAll();
     }
 
-    public Mentor findById(long id){
+    public Mentor buscarPorId(long id){
         return mentorRepository.findById(id)
                 .orElseThrow(()-> new RuntimeException("Mentor não encontrado"));
     }
@@ -40,7 +40,7 @@ public class MentorService {
 
     public Mentor update(Long id, Mentor mentorUpdate){
 
-        Mentor mentorExistente = findById(id);
+        Mentor mentorExistente = buscarPorId(id);
         mentorExistente.setNome(mentorUpdate.getNome());
         mentorExistente.setCpf(mentorUpdate.getCpf());
         mentorExistente.setEmail(mentorUpdate.getEmail());
@@ -55,7 +55,7 @@ public class MentorService {
     }
 
     public void delete(Long id){
-        Mentor mentor = findById(id);
+        Mentor mentor = buscarPorId(id);
         mentorRepository.delete(mentor);
     }
 
