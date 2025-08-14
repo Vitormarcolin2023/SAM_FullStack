@@ -1,5 +1,6 @@
 package com.api.sam.service;
 
+import com.api.sam.model.Coordenador;
 import com.api.sam.model.Mentor;
 import com.api.sam.model.StatusMentor;
 import com.api.sam.repository.MentorRepository;
@@ -29,22 +30,20 @@ public class MentorService {
   }
 
   //salvar
-  public Mentor save(Mentor mentor) {
+ /* public Mentor save(Mentor mentor) {
       // Regra de negócio: só pode finalizar o cadastro após aprovação da coordenação
-      // OBS: Lógica de aprovação será implementada quando a classe Coordenação estiver disponível.
+      // Status inicial até coordenação aprovar
+      mentor.setTipoDeVinculo(StatusMentor.PENDENTE);
 
-      mentor.setTipoDeVinculo(StatusMentor.PENDENTE);  // Status inicial até coordenação aprovar
-
-      // No futuro, aqui terá a verificação, por exemplo:
-      // if (coordenacaoService.aprovou(mentor)) {
-      //     mentor.setTipoDeVinculo(Status.CONCLUIDO);
-      // } else {
-      //     mentor.setTipoDeVinculo(Status.PENDENTE);
+      // Simulação futura da verificação de aprovação
+       if (CoordenadorService.aprovado(mentor)) {
+           mentor.setTipoDeVinculo(StatusMentor.CONCLUIDO);
+       } else {
+           mentor.setTipoDeVinculo(StatusMentor.PENDENTE);
       // }
-
       return mentorRepository.save(mentor);
   }
-
+  */
 
     //atualizar
     public Mentor update(Long id, Mentor mentorUpdate){
