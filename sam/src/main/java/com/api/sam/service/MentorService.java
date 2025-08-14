@@ -17,7 +17,7 @@ public class MentorService {
   }
 
   //listar
-  public List<Mentor> listAll(long id){
+  public List<Mentor> listAll(){
       return mentorRepository.findAll();
   }
 
