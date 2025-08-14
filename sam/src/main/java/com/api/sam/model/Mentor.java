@@ -4,6 +4,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -40,10 +41,10 @@ import org.springframework.data.annotation.Id;
         private String tempoDeExperiencia;
         private String tipoDeVinculo;
 
-    /*
+
     @NotNull(message = "A área de atuação é obrigatória")
     private AreaDeAtuacao areaDeAtuacao;
-     */
+
 
     //private Endereco endereco; criar classe endereço
     }
