@@ -1,8 +1,7 @@
 package com.api.sam.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
+import ch.qos.logback.core.status.Status;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -39,11 +38,14 @@ import org.springframework.data.annotation.Id;
         private String telefone;
 
         private String tempoDeExperiencia;
-        private String tipoDeVinculo;
+
+        @NotNull(message = "O status do mentor é obrigatório")
+        @Enumerated(EnumType.STRING)
+        private StatusMentor tipoDeVinculo;
 
 
-    @NotNull(message = "A área de atuação é obrigatória")
-    private AreaDeAtuacao areaDeAtuacao;
+        @NotNull(message = "A área de atuação é obrigatória")
+        private AreaDeAtuacao areaDeAtuacao;
 
 
     //private Endereco endereco; criar classe endereço

@@ -1,6 +1,7 @@
 package com.api.sam.service;
 
 import com.api.sam.model.Mentor;
+import com.api.sam.model.StatusMentor;
 import com.api.sam.repository.MentorRepository;
 import org.springframework.stereotype.Service;
 
@@ -32,17 +33,18 @@ public class MentorService {
       // Regra de negócio: só pode finalizar o cadastro após aprovação da coordenação
       // OBS: Lógica de aprovação será implementada quando a classe Coordenação estiver disponível.
 
-      mentor.setTipoDeVinculo("PENDENTE_APROVACAO"); // Status inicial até coordenação aprovar
+      mentor.setTipoDeVinculo(StatusMentor.PENDENTE);  // Status inicial até coordenação aprovar
 
       // No futuro, aqui terá a verificação, por exemplo:
       // if (coordenacaoService.aprovou(mentor)) {
-      //     mentor.setTipoDeVinculo("COMPLETO");
+      //     mentor.setTipoDeVinculo(Status.CONCLUIDO);
       // } else {
-      //     mentor.setTipoDeVinculo("PENDENTE_APROVACAO");
+      //     mentor.setTipoDeVinculo(Status.PENDENTE);
       // }
 
       return mentorRepository.save(mentor);
   }
+
 
     //atualizar
     public Mentor update(Long id, Mentor mentorUpdate){

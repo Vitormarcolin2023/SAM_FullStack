@@ -47,7 +47,7 @@ public class MentorController {
         return ResponseEntity.ok(mentorService.update(id, mentor));
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete (@PathVariable Long id){
         mentorService.delete(id);
         return ResponseEntity.noContent().build();
