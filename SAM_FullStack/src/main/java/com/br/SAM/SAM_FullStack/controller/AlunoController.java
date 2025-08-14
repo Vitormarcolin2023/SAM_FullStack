@@ -1,6 +1,6 @@
 package com.br.SAM.SAM_FullStack.controller;
 
-import com.br.SAM.SAM_FullStack.model.AlunoModel;
+import com.br.SAM.SAM_FullStack.model.Aluno;
 import com.br.SAM.SAM_FullStack.service.AlunoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,9 +17,9 @@ public class AlunoController {
     private final AlunoService alunoService;
 
     @GetMapping("/findAll")
-    public ResponseEntity<List<AlunoModel>> findAll(){
+    public ResponseEntity<List<Aluno>> findAll(){
         try {
-            List<AlunoModel> result = alunoService.findAll();
+            List<Aluno> result = alunoService.findAll();
             return new ResponseEntity<>(result, HttpStatus.OK);
         } catch (Exception ex) {
             // É uma boa prática logar o erro para depuração
@@ -29,9 +29,9 @@ public class AlunoController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<AlunoModel> save(@RequestBody AlunoModel aluno) {
+    public ResponseEntity<Aluno> save(@RequestBody Aluno aluno) {
         try {
-            AlunoModel result = alunoService.save(aluno);
+            Aluno result = alunoService.save(aluno);
             return new ResponseEntity<>(result, HttpStatus.CREATED);
         } catch (Exception ex) {
             // Logar o erro

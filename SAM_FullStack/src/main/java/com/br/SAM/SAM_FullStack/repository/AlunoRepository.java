@@ -1,6 +1,7 @@
 package com.br.SAM.SAM_FullStack.repository;
 
-import com.br.SAM.SAM_FullStack.model.AlunoModel;
+import com.br.SAM.SAM_FullStack.model.Aluno;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -10,8 +11,20 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface AlunoRepository extends JpaRepository<AlunoModel, Integer> {
+public interface AlunoRepository extends JpaRepository<Aluno, Integer> {
 
-//oi
+    Optional<Aluno> findByNome(String nome);
+
+    Optional<Aluno> findByRa(Integer ra);
+
+    @Query(
+            "Select a from Aluno a where a.nome = :nome"
+    )
+    List<Aluno> getByNome(@Param("nome") String nome);
+
+    @Query(
+            "Select a from Aluno a where a.ra = :ra"
+    )
+    List<Aluno> getByRa(@Param("ra") Integer ra);
 
 }
